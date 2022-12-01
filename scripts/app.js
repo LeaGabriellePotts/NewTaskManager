@@ -39,6 +39,25 @@ function saveTask() {
     cost
   );
   console.log(task);
+  displayTask(task);
+}
+function displayTask(task) {
+  let syntax = `<div class="task">
+  <i class="fa-solid fa-hippo topIcon"></i>
+</div>
+
+  <div class= "description" >
+  <h5>${task.title}</h5>
+  <p>${task.description}</p>
+  </div>
+
+  <label>${task.dueDate}</label>
+  <label>${task.category}</label>
+  <label>${task.cost}</label>
+
+  </div> `; //html code
+
+  $("#pendingTasks").append(syntax);
 }
 
 function toggleDetails() {

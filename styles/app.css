@@ -12,24 +12,45 @@ nav {
 h1{
     text-align: center;
     color: rgb(232, 31, 169);
-    
+
     margin: 0;
 
 }
 
 .main-container {
+    background-image: url('../images/prettybackground.webp');
+    background-size: cover;
     display: flex;
     height: calc(100vh - 70px);
 }
 
 #secList{
     flex: 2;
-    background-color: rgb(174, 35, 139);
+    /* background-color: rgb(174, 35, 139); */
+    
+    background-color:  rgba(255, 15, 123, 0.231);
+
+    background: linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);
+    
+    background: -moz-linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);
+    
+    background: -webkit-linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF0F7B", endColorstr="#F89B29", GradientType=1 );;
 }
 
 #secForm{
     flex: 1;
-    background-color: rgb(219, 120, 174);
+    background: hsla(339, 100%, 55%, 1);
+
+background: linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF1B6B", endColorstr="#45CAFF", GradientType=1 );
+    /* background-color: rgb(219, 120, 174); */
 }
 
 footer {
@@ -50,4 +71,18 @@ display: block;
 
 #btnToggleDetails{
     color: darkmagenta
+}
+.task{
+    border: 1px solid #cacadb;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+
+    display: flex;
+}
+.task .description{
+    flex: 4;
+
+}
+.task label{
+    flex: 1;
 }
