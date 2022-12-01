@@ -1,3 +1,4 @@
+// making changes to see if they properly push to github
 // create global variables and const
 const nonImportantIcon = "fa-solid fa-hippo";
 const importantIcon = "fa-solid fa-star";
@@ -23,7 +24,7 @@ function saveTask() {
   let title = $("#txtTitle").val();
   let description = $("#txtDescription").val();
   let dueDate = $("#txtDate").val();
-  let category = $("selCategory").val();
+  let category = $("#selCategory").val();
   let priority = $("#txtPriority").val();
   let cost = $("#txtCost").val();
 
