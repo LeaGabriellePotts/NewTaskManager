@@ -38,10 +38,26 @@ function saveTask() {
     priority,
     cost
   );
-  console.log(task);
-  displayTask(task);
+
+  //craet a post request to
+  //https://fsdiapi.azurewebsites.net/api/tasks/
+  $.ajax({
+    type: "POST",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks/",
+    data: JSON.stringify(task),
+    contentType: "application/json",
+    success: function (data) {
+      displayTask(task);
+      console.log("Server says", data);
+    },
+    error: function (err) {
+      console.log("saving failed", err);
+      alert("Error, task not saved");
+    },
+  });
 }
 function displayTask(task) {
+  //html code
   let syntax = `<div class="task">
   <i class="fa-solid fa-hippo topIcon"></i>
 </div>
@@ -71,8 +87,48 @@ function toggleDetails() {
   }
 }
 
+function testRequest() {
+  $.ajax({
+    type: "GET",
+    url: "https://fsdiapi.azurewebsites.net",
+    success: function (data) {
+      console.log("Server says", data);
+    },
+    error: function (error) {
+      console.log("Request error", error);
+    },
+  });
+}
+
+function fetchTasks() {
+  //send a get request to https://fsdiapi.azurewebsites.net/api/tasks
+  //console log the server results
+  $.ajax({
+    type: "GET",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks",
+    success: function (data) {
+      let all = JSON.parse(data); //will parse the json string into js obj / array
+      // console.log(all); //all = all the tasts saved on teh server
+
+      for (let i = 0; i < all.length; i++) {
+        let task = all[i];
+        //if the task name is equal to my name, then
+        if (task.name === "Lea") {
+          displayTask(task);
+        }
+      }
+    },
+    error: function (error) {
+      console.log("Request error", error);
+    },
+  });
+}
+
 function init() {
   console.log("Task Manager");
+
+  //load tasks
+  fetchTasks();
 
   $("#topIcon").click(toggleImportant);
   $("#btnSave").click(saveTask);

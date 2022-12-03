@@ -8,5 +8,7 @@ class Task {
     this.category = category;
     this.priority = priority;
     this.cost = cost;
+
+    this.name = "Lea";
   }
 }

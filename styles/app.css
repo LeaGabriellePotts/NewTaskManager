@@ -21,7 +21,7 @@ h1{
     background-image: url('../images/prettybackground.webp');
     background-size: cover;
     display: flex;
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
 }
 
 #secList{
